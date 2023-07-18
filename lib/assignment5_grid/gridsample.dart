@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -20,7 +19,6 @@ class gridSample extends StatelessWidget {
     Colors.pink,
     Colors.yellow,
     Colors.lightBlue,
-
     Colors.teal,
     Colors.brown,
   ];
@@ -46,7 +44,7 @@ class gridSample extends StatelessWidget {
 
           GridView.count(
           crossAxisCount: 2,
-          childAspectRatio: (1 / .4),
+          childAspectRatio: (1 / .55),
           shrinkWrap: true,
           mainAxisSpacing: 20,
           crossAxisSpacing: 20,

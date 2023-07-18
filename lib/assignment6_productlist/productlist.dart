@@ -5,16 +5,11 @@ void main()
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     theme: ThemeData(primarySwatch: Colors.green),
-
     home: Productlist(),
-
   ));
 }
-
 class Productlist extends StatelessWidget {
-
-
-  @override
+ @override
   var names=["Tomato","Capsicum","Carrot","Cauliflower","Chilli","Tomato","Capsicum","Carrot","Cauliflower","Chilli","Tomato","Capsicum","Carrot","Cauliflower","Chilli"];
   var unit=["kg","pc","kg","pc","gm","kg","pc","kg","pc","gm","kg","pc","kg","pc","gm"];
   var images=[
@@ -43,11 +38,9 @@ class Productlist extends StatelessWidget {
               fontSize: 20,
               color: Colors.white,
               fontStyle: FontStyle.italic,
-            ),
-          ),
+            ), ),
           actions: const [
             Icon(Icons.shopping_cart)],
-
         ),
         body: ListView(children:List.generate(15,(index) =>
             Card(
@@ -73,33 +66,25 @@ class Productlist extends StatelessWidget {
                         children: [
                           Text("price:",style: GoogleFonts.lato(fontSize: 20,fontStyle: FontStyle.italic,)),
                           Text(price[index],style: GoogleFonts.lato(fontSize: 20,fontStyle: FontStyle.italic,)),
-                        ],
-                      ),
-                    ],
+                        ], ),  ],
                   ),
                   trailing: SizedBox(
                     height: 40,
                     width: 100,
                     child: ElevatedButton(onPressed: () {
-
                     },
-
                         child: Text("Add to cart",
                           style: GoogleFonts.lato(fontSize: 15,
                             color: Colors.white,
                             fontStyle: FontStyle.italic,),),
                         style: ButtonStyle(
-
                           shape: MaterialStateProperty.all<
                               RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
-                            ),
-                          ),
+                            ),),
                         )),
                   )
-
-
               ),
             )))
     );

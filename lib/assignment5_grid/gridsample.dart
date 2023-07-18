@@ -36,8 +36,6 @@ class gridSample extends StatelessWidget {
     Icons.wifi_lock,
     Icons.mail,
   ];
-
-
     Widget build(BuildContext context) {
       return Scaffold(
         body:
@@ -62,9 +60,7 @@ class gridSample extends StatelessWidget {
                       Text("User $index",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))],
                   ),
                 ));
-          }
-              ),),
-
+          } ),),
       );
     }
   }

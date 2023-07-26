@@ -10,7 +10,6 @@ class HomePage extends StatelessWidget {
     "assets/assignment8/ffz3.jpg",
     "assets/assignment8/ffz4.jpg",
       ];
-
   var images2=[
     "assets/assignment8/offer2.jpg",
     "assets/assignment8/tomato.jpg",
@@ -44,6 +43,7 @@ class HomePage extends StatelessWidget {
     "assets/assignment8/cust2.jpg",
     "assets/assignment8/cust3.jpg",
   ];
+  var text1=["Offers","Vegetables","Fruits","Exotic","Fresh Cuts","Nutrition Chargers","Salads"];
    Widget build(BuildContext context) {
 
 
@@ -134,9 +134,11 @@ class HomePage extends StatelessWidget {
     ),
         SliverToBoxAdapter(
             child:
-              CarouselSlider(items:List.generate(3,(index) => Card(
+              CarouselSlider(
+                items:List.generate(3,(index) => Card(
                 child: Image.asset(images1[index]),
-              )), options:  CarouselOptions(
+              )),
+                options:  CarouselOptions(
                   height: 220,
                   aspectRatio: 8 / 16,
                   viewportFraction: 1,
@@ -149,8 +151,8 @@ class HomePage extends StatelessWidget {
                   enlargeFactor: .5,
                   scrollDirection: Axis.horizontal
               ),
-              )
-          ),
+              )),
+
         SliverToBoxAdapter(
               child: Container(
                 decoration: BoxDecoration(
@@ -202,6 +204,7 @@ class HomePage extends StatelessWidget {
     ],
 
           ),),),
+
         SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 3,
@@ -209,7 +212,7 @@ class HomePage extends StatelessWidget {
     crossAxisSpacing: 10,
     childAspectRatio: 1.0,
     ),
-    delegate: SliverChildBuilderDelegate(
+         delegate: SliverChildBuilderDelegate(
     (context, index) {
     return
     Card(
@@ -225,15 +228,17 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          Text("OFFERS"),
+          Text(text1[index],style: GoogleFonts.lato(fontSize: 15,)),
         ], ),
       elevation: 5.0,
          );
     }, childCount: images2.length,
 
-    ),),
-    SliverToBoxAdapter(
-    child: Container(
+    ),)
+
+          ,
+        SliverToBoxAdapter(
+         child: Container(
     decoration: BoxDecoration(
       image: DecorationImage(
         image: AssetImage("assets/assignment8/banner1.jpg"),
@@ -242,55 +247,56 @@ class HomePage extends StatelessWidget {
     ),
     height: 150,
       )),
-    SliverToBoxAdapter(
+
+
+        SliverToBoxAdapter(
               child:Container(
                 height: 90,
                 child:Text("\nBest Selling Products",style: GoogleFonts.lato(fontSize: 30,color: Colors.green[900],),)
               )),
 
-
-
-    SliverGrid(
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        SliverGrid(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
     crossAxisCount: 2,
     mainAxisSpacing: 10,
     crossAxisSpacing: 10,
     childAspectRatio: 1.0,
     ),
-    delegate: SliverChildBuilderDelegate(
+         delegate: SliverChildBuilderDelegate(
     (context, index) {
     return
-      Container(
-        margin: EdgeInsets.all(3),
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.grey,
-            style: BorderStyle.solid,
-            width: .6,
-          ),
-        ),
-        height: 400,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-        children:[
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(products[index]),
-                fit: BoxFit.cover,
-              ),
+      Expanded(
+        child: Container(
+          margin: EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.grey,
+              style: BorderStyle.solid,
+              width: .6,
             ),
-            height: 100,
           ),
 
-      Text("Name:",style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
-      Text("price:",style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          children:[
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(products[index]),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              height: 100,
+            ),
+
+        Text("Name:",style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
+        Text("price:",style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
      Row(
-       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-      Text("Unit:",style: GoogleFonts.lato(fontSize:15,fontStyle: FontStyle.italic,)),
+         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+        Text("Unit:",style: GoogleFonts.lato(fontSize:15,fontStyle: FontStyle.italic,)),
     ElevatedButton(
-        onPressed: () {
+          onPressed: () {
     },
     child: Text("Add",    style: GoogleFonts.lato(fontSize: 15,
     color: Colors.white,
@@ -300,14 +306,15 @@ class HomePage extends StatelessWidget {
     RoundedRectangleBorder>(
     RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
     )),], ),  ],
-      ),
-    );
+        ),
+    ),
+      );
     }, childCount: products.length,
-    ),
-    ),
-    SliverToBoxAdapter(
-    child:
-    ElevatedButton(
+    ),  ),
+
+        SliverToBoxAdapter(
+         child:
+         ElevatedButton(
     onPressed: () {
     },
     child: Text("View More",
@@ -319,8 +326,10 @@ class HomePage extends StatelessWidget {
     RoundedRectangleBorder>(
     RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
     )),),
-    SliverToBoxAdapter(
-    child: Container(
+
+
+        SliverToBoxAdapter(
+         child: Container(
     decoration: BoxDecoration(
     image: DecorationImage(
     image: AssetImage("assets/assignment8/banner2.jpg"),
@@ -330,12 +339,13 @@ class HomePage extends StatelessWidget {
     height: 150,
     )),
 
-          SliverToBoxAdapter(
+        SliverToBoxAdapter(
               child:Container(
                   height: 90,
                   child:Text("Our Blog Posts",style: GoogleFonts.lato(fontSize: 30,color: Colors.green[900],),)
               )),
-          SliverToBoxAdapter(
+
+        SliverToBoxAdapter(
             child: Container(
 
               height: 100.0,
@@ -371,10 +381,9 @@ class HomePage extends StatelessWidget {
                     ),
                   );
                 },
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
+              ),),),
+
+        SliverToBoxAdapter(
             child:
             ElevatedButton(
                 onPressed: () {
@@ -388,6 +397,7 @@ class HomePage extends StatelessWidget {
                       RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
                 )),),
+
           SliverToBoxAdapter(
               child:Container(
                   height: 90,
@@ -412,7 +422,7 @@ class HomePage extends StatelessWidget {
         "ots in a piece of classical Latin\n literature from 45 BC, making \n"
         "it over 2000 years old. Richard McClintock,\n a Latin professor at"
         " Hampden-Sydney College")  ],)),),
-     options:  CarouselOptions(
+              options:  CarouselOptions(
                   height: 220,
                   aspectRatio: 8 / 16,
                   viewportFraction: 1,
@@ -424,14 +434,14 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                   enlargeFactor: .5,
                   scrollDirection: Axis.horizontal
-              ),
-              )
-          ),
+              ), )  ),
+
           SliverToBoxAdapter(
               child:Container(
                   height: 90,
                   child:Center(child: Text("\nThis is kochi-based-farm-to-fork online\nmarketplace is connecting farmers\n            directly to customers",style: GoogleFonts.lato(fontSize: 15,color: Colors.green[900],),))
               )),
+
           SliverToBoxAdapter(
               child:Container(
                   height: 90,

@@ -21,7 +21,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   google_fonts: ^5.1.0
-  carousel_slider: ^4.2.1
 
 
 
@@ -35,5 +34,3 @@ flutter:
 
   assets:
     - assets/assignment6/
-    - assets/assignment7/
-    - assets/assignment8/

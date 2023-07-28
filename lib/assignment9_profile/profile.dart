@@ -81,7 +81,7 @@ class MyProfile extends StatelessWidget {
                               ListTile(
                                 leading: Icon(gridicon[index]),
                                 title: Text(names[index], style: GoogleFonts.lato(
-                                    fontSize: 20)),
+                                    fontSize: 23)),
                                 trailing: Icon(Icons.navigate_next),
                               ),);
                             }

@@ -34,6 +34,10 @@ flutter:
 
 
   assets:
+    - assets/assignment1/
+    - assets/assignment2/
+    - assets/assignment3/
+    - assets/assignment4/
     - assets/assignment6/
     - assets/assignment7/
     - assets/assignment8/

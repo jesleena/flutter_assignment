@@ -42,8 +42,13 @@ flutter:
     - assets/assignment7/
     - assets/assignment8/
     - assets/assignment9/
+    - assets/assignment11/germany/
+    - assets/assignment11/italy/
+    - assets/assignment11/spain/
+    - assets/assignment11/india/
+    - assets/assignment11/uae/
   fonts:
     - family: Amaranth
       fonts:
         - asset: assets/fonts/Amaranth-BoldItalic.ttf
-
+        - asset: assets/fonts/Amaranth-Italic.ttf

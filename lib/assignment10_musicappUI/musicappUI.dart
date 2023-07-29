@@ -64,15 +64,22 @@ class _MusicUIState extends State<MusicUI> {
     return Scaffold(
       body: CustomScrollView(slivers: <Widget>[
         SliverAppBar(
+          floating: true,
+          pinned: true,
+          flexibleSpace: FlexibleSpaceBar(
+
           title: Text(
             "Musify ",style: Theme.of(context).textTheme.displayLarge,
+          ),),
+
           ),
-          bottom: AppBar(
-            title: Text(
-                  '  Suggested Playlist  ',style: Theme.of(context).textTheme.titleLarge,
-                ),
-          ),
-        ),
+        SliverToBoxAdapter(
+          child:SizedBox(
+            height: 80,
+            child: Text(
+              '  \n   Playlist ',style: Theme.of(context).textTheme.titleLarge,
+            ),
+          ),),
         SliverToBoxAdapter(
           child: Container(
              height: 200,
@@ -126,8 +133,8 @@ SliverToBoxAdapter(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-      Icon(Icons.star,color: Colors.pink[200]),
-      Icon(Icons.download,color: Colors.pink[200]),
+      Icon(Icons.star_border_outlined,color: Colors.pink[200]),
+      Icon(Icons.download_outlined,color: Colors.pink[200]),
       ]),
     )
     ),),

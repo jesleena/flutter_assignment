@@ -42,3 +42,8 @@ flutter:
     - assets/assignment7/
     - assets/assignment8/
     - assets/assignment9/
+  fonts:
+    - family: Amaranth
+      fonts:
+        - asset: assets/fonts/Amaranth-BoldItalic.ttf
+

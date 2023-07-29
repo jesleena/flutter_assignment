@@ -99,7 +99,7 @@ SliverToBoxAdapter(
   child:SizedBox(
     height: 80,
     child: Text(
-      '  \n   Suggested Playlist  ',style: Theme.of(context).textTheme.titleLarge,
+      '  \n   Recommended for you  ',style: Theme.of(context).textTheme.titleLarge,
       ),
   ),),
 

@@ -7,8 +7,9 @@ void main() {
     theme:  ThemeData(primarySwatch: Colors.deepPurple).copyWith(
         textTheme: TextTheme(
           displayLarge: TextStyle(fontSize:40, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.white,fontStyle: FontStyle.italic),
-          displayMedium: TextStyle(fontSize:35, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.white),
-          displaySmall: TextStyle(fontSize:35, fontFamily:'Amaranth',color:Colors.black),
+          displayMedium: TextStyle(fontSize:35, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.deepPurple),
+          displaySmall: TextStyle(fontSize:35, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.white),
+          headlineMedium: TextStyle(fontSize:35, fontFamily:'Amaranth',color:Colors.black),
          headlineSmall: TextStyle(fontSize:18, fontFamily:'Amaranth',color:Colors.black),
         )
     ),
@@ -32,33 +33,43 @@ class PlaceList extends StatelessWidget {
             ),
             width: 700,
             height: 60,
-            child:Text("  Popular",style: Theme.of(context).textTheme.displayLarge,)),
+            child:Text("TOURISM",style: Theme.of(context).textTheme.displayLarge,)),
       ),
     body:
       ListView(
-        padding: EdgeInsets.all(8),
-        children: places.map((e) => GestureDetector(
-          child: Card(
-            child: Stack(
-              children: <Widget>[
-            Container(
-           // width: 440,
-            height: 250,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              image: DecorationImage(
-                image: AssetImage(e["image1"]),
-                fit: BoxFit.cover,
+        children:[
+          Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(9)
               ),
-            ), ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 190, 20, 0),
-                  child:
-                  Text(e["name"],style: Theme.of(context).textTheme.displayMedium),),
-              ],
-            ),
-          ), onTap: ()=> goToDetails(context,e['id']),
-        ),).toList(),
+              width: 700,
+              height: 60,
+              child:Text("  Popular",style: Theme.of(context).textTheme.displayMedium,)),
+          Column(
+         // padding: EdgeInsets.all(8),
+          children: places.map((e) => GestureDetector(
+            child: Card(
+              child: Stack(
+                children: <Widget>[
+              Container(
+             // width: 440,
+              height: 250,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(18),
+                image: DecorationImage(
+                  image: AssetImage(e["image1"]),
+                  fit: BoxFit.cover,
+                ),
+              ), ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(30, 190, 20, 0),
+                    child:
+                    Text(e["name"],style: Theme.of(context).textTheme.displaySmall),),
+                ],
+              ),
+            ), onTap: ()=> goToDetails(context,e['id']),
+          ),).toList(),
+        ),]
       ),
     );
   }

@@ -28,7 +28,7 @@ class PlaceDetails extends StatelessWidget {
             ), ),
 
             Text(place["name"],
-                style: Theme.of(context).textTheme.displaySmall),
+                style: Theme.of(context).textTheme.headlineMedium),
 
             Text(place["description"],style: Theme.of(context).textTheme.headlineSmall),
 
@@ -55,8 +55,8 @@ class PlaceDetails extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                 },
-                child: Text("            Explore         ",
-                    style: Theme.of(context).textTheme.displayMedium),
+                child: Text("Explore",
+                    style: Theme.of(context).textTheme.displaySmall),
                 style: ButtonStyle(
                       shape: MaterialStateProperty.all<
                       RoundedRectangleBorder>(

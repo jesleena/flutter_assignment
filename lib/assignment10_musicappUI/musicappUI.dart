@@ -116,10 +116,17 @@ SliverToBoxAdapter(
     height: 100,
     width: 300,
     child: ListTile(
-    leading: ClipRRect(
-    borderRadius:
-    BorderRadius.circular(20),
-    child: Image.asset(images[index]),
+    leading: Container(
+      margin: EdgeInsets.all(3),
+      width: 50,
+      height: 50,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        image: DecorationImage(
+          image: AssetImage(images[index]),
+          fit: BoxFit.cover,
+        ),
+      ),
     ),
     title: Column( crossAxisAlignment: CrossAxisAlignment.start,
     children: [

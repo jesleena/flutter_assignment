@@ -27,13 +27,14 @@ class MyProfile extends StatelessWidget {
             Icons.arrow_back_ios_sharp,
             color: Colors.black),
         actions: [Icon(
-            Icons.more_horiz_outlined,
+            Icons.format_align_right,
             color: Colors.black),
         ],
         backgroundColor: Colors.white,
         elevation: 0.0,
       ),
       body: Container(
+        padding: EdgeInsets.all(18),
         height: MediaQuery.of(context).size.height,
         width:MediaQuery.of(context).size.width ,
         child: Column(
@@ -56,7 +57,7 @@ class MyProfile extends StatelessWidget {
                     child: Image.asset("assets/assignment9/GitHub.png",fit: BoxFit.fill)),
               ],
             ),
-            Text("Neha",style: GoogleFonts.lato(fontSize: 35,fontStyle: FontStyle.italic,)),
+            Text("Neha",style: GoogleFonts.lato(fontSize: 35,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold)),
             Text("@devops",style: GoogleFonts.lato(fontSize: 18,fontStyle: FontStyle.italic,)),
             Text("Mobile App Developer",style: GoogleFonts.lato(fontSize: 25)),
             Expanded(

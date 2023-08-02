@@ -22,6 +22,7 @@ dev_dependencies:
     sdk: flutter
   google_fonts: ^5.1.0
   carousel_slider: ^4.2.1
+  shared_preferences: ^2.2.0
 
 
 
@@ -47,6 +48,7 @@ flutter:
     - assets/assignment11/spain/
     - assets/assignment11/india/
     - assets/assignment11/uae/
+    - assets/assignment12/
   fonts:
     - family: Amaranth
       fonts:

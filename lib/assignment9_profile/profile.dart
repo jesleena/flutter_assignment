@@ -68,7 +68,6 @@ class MyProfile extends StatelessWidget {
                     children: [
                       Container(
                         child: ListView.builder(
-                          //primary: false,
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
                             itemCount: names.length ,
@@ -79,11 +78,13 @@ class MyProfile extends StatelessWidget {
                                 ),
                                 color: Colors.grey[350],
                                 child:
-                              ListTile(
-                                leading: Icon(gridicon[index]),
-                                title: Text(names[index], style: GoogleFonts.lato(
-                                    fontSize: 23)),
-                                trailing: Icon(Icons.navigate_next),
+                              InkWell(
+                                child: ListTile(
+                                  leading: Icon(gridicon[index]),
+                                  title: Text(names[index], style: GoogleFonts.lato(
+                                      fontSize: 23,fontWeight: FontWeight.bold)),
+                                  trailing: Icon(Icons.navigate_next),
+                                ),
                               ),);
                             }
                         ),

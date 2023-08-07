@@ -16,6 +16,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  introduction_screen: ^3.1.11
 
 dev_dependencies:
   flutter_test:
@@ -23,6 +24,7 @@ dev_dependencies:
   google_fonts: ^5.1.0
   carousel_slider: ^4.2.1
   shared_preferences: ^2.2.0
+  flutter_rating_bar: ^4.0.1
 
 
 
@@ -49,6 +51,7 @@ flutter:
     - assets/assignment11/india/
     - assets/assignment11/uae/
     - assets/assignment12/
+    - assets/assignment13/
   fonts:
     - family: Amaranth
       fonts:

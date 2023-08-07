@@ -52,6 +52,7 @@ flutter:
     - assets/assignment11/uae/
     - assets/assignment12/
     - assets/assignment13/
+    - assets/assignment14/
   fonts:
     - family: Amaranth
       fonts:

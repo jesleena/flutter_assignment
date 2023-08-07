@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-/// Flutter code sample for [PageView].
+import 'ramada.dart';
+import 'crown.dart';
+import 'meridian.dart';
 
 
 void main() {
@@ -9,10 +10,11 @@ void main() {
         debugShowCheckedModeBanner: false,
         theme:  ThemeData(primarySwatch: Colors.deepPurple).copyWith(
             textTheme: TextTheme(
-              displayLarge: TextStyle(fontSize:30, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.white,fontStyle: FontStyle.italic),
-              displaySmall: TextStyle(fontSize:18, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.black),
-              headlineMedium: TextStyle(fontSize:25, fontFamily:'Amaranth',color:Colors.purple),
-              headlineSmall: TextStyle(fontSize:18, fontFamily:'Amaranth',color:Colors.white,fontWeight: FontWeight.bold),
+              displayLarge: TextStyle(fontSize:25,fontWeight: FontWeight.bold,color:Colors.white,),
+              displayMedium: TextStyle(fontSize:20,color:Colors.black,fontWeight: FontWeight.bold),
+              displaySmall: TextStyle(fontSize:16,color:Colors.black),
+              headlineMedium: TextStyle(fontSize:18, color:Colors.purple),
+              headlineSmall: TextStyle(fontSize:18, color:Colors.white,fontWeight: FontWeight.bold),
             )
         ),
         home: HomePage(),
@@ -51,233 +53,9 @@ class _HomePageState extends State<HomePage> {
       body: PageView(
         controller: _pageController,
         children: <Widget>[
-        Column(
-        children: [
-      Stack(
-      children: [
-      Container(
-
-      height: 350,
-      decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(18),
-      image: DecorationImage(
-      image: AssetImage('assets/assignment13/ramada.jpg'),
-      fit: BoxFit.cover,
-      ),
-      ), ),
-      Padding(
-      padding: const EdgeInsets.fromLTRB(30, 190, 20, 0),
-      child:
-      Text("RAMADA",style: Theme.of(context).textTheme.displayLarge),),
-
-      Padding(
-      padding: const EdgeInsets.fromLTRB(30, 300, 20, 0),
-      child:
-      Container(
-      decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(18),color: Colors.grey,),
-      child: Text("  9/10 Reviews  ",style: Theme.of(context).textTheme.headlineSmall)),),
-      Padding(
-      padding: const EdgeInsets.fromLTRB(300, 300, 20, 0),
-      child:Icon(Icons.favorite_border_outlined,color: Colors.white,)
-      ),
-
-
-
-      ],
-      ),
-      Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-
-      RatingBar.builder(
-      initialRating: 3,
-      minRating: 1,
-      direction: Axis.horizontal,
-      allowHalfRating: true,
-      itemCount: 5,
-      itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-      itemBuilder: (context, _) => Icon(
-      Icons.star,
-      color: Colors.purple,
-      ),
-      onRatingUpdate: (rating) {
-      print(rating);
-      },
-      ),
-      Text(" Rs 12000/ ",style: Theme.of(context).textTheme.headlineMedium)
-      ],
-      ),
-      ElevatedButton(onPressed: (){},
-      child: Container(
-      height: 40,
-      width: 300,
-      child: Center(
-      child: Text("Book Now",
-      style: Theme.of(context).textTheme.headlineSmall),
-      ),
-      ),
-      style: ButtonStyle(
-      shape: MaterialStateProperty.all<
-      RoundedRectangleBorder>(
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
-      )),
-      Padding(
-        padding: const EdgeInsets.all(20),
-        child: Text("Relax in Kochi\n    Close to Cochin International Airport and Kochi city center\n  Choose our Ramada Resort Kochi hotel near Kochi City Center for numerous amenities and comfortable accommodations in a convenient location. Our Cochin location is 45 minutes from Cochin International Airport (COK), and our comfortable, convenient amenities make our hotel the perfect choice for business and leisure travelers alike.",
-        style: Theme.of(context).textTheme.displaySmall),
-      ),
-      ],
-      ),
-
-      Column(
-      children: [
-      Stack(
-      children: [
-      Container(
-
-      height: 350,
-      decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(18),
-      image: DecorationImage(
-      image: AssetImage('assets/assignment13/meridian.jpg'),
-      fit: BoxFit.cover,
-      ),
-      ), ),
-      Padding(
-      padding: const EdgeInsets.fromLTRB(30, 190, 20, 0),
-      child:
-      Text("LE MERIDIAN",style: Theme.of(context).textTheme.displayLarge),),Padding(
-          padding: const EdgeInsets.fromLTRB(30, 300, 20, 0),
-          child:
-          Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),color: Colors.grey,),
-              child: Text("  9/10 Reviews  ",style: Theme.of(context).textTheme.headlineSmall)),),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(300, 300, 20, 0),
-          child:
-      Icon(Icons.favorite_border_outlined,color: Colors.white,)),
- ],
-      ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-
-            RatingBar.builder(
-              initialRating: 3,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.purple,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-            Text(" Rs 12000/ ",style: Theme.of(context).textTheme.headlineMedium)
-          ],
-        ),
-        ElevatedButton(onPressed: (){},
-            child: Container(
-              height: 40,
-              width: 300,
-              child: Center(
-                child: Text("Book Now",
-                    style: Theme.of(context).textTheme.headlineSmall),
-              ),
-            ),
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<
-                  RoundedRectangleBorder>(
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
-            )),
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Text("Relax in Kochi\n    Close to Cochin International Airport and Kochi city center\n  Choose our Ramada Resort Kochi hotel near Kochi City Center for numerous amenities and comfortable accommodations in a convenient location. Our Cochin location is 45 minutes from Cochin International Airport (COK), and our comfortable, convenient amenities make our hotel the perfect choice for business and leisure travelers alike.",
-              style: Theme.of(context).textTheme.displaySmall),
-        ),
-      ],
-      ),
-      Column(
-      children: [
-      Stack(
-      children: [
-      Container(
-
-      height: 350,
-      decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(18),
-      image: DecorationImage(
-      image: AssetImage('assets/assignment13/crown.jpg'),
-      fit: BoxFit.cover,
-      ),
-      ), ),
-      Padding(
-      padding: const EdgeInsets.fromLTRB(30, 190, 20, 0),
-      child:
-      Text("CROWN PLAZA",style: Theme.of(context).textTheme.displayLarge),),Padding(
-          padding: const EdgeInsets.fromLTRB(30, 300, 20, 0),
-          child:
-          Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),color: Colors.grey,),
-              child: Text("  9/10 Reviews  ",style: Theme.of(context).textTheme.headlineSmall)),),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(300, 300, 20, 0),
-            child:Icon(Icons.favorite_border_outlined,color: Colors.white,)),
-
-
-
-      ],
-      ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-
-            RatingBar.builder(
-              initialRating: 3,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.purple,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
-            Text(" Rs 12000/ ",style: Theme.of(context).textTheme.headlineMedium)
-          ],
-        ),
-        ElevatedButton(onPressed: (){},
-            child: Container(
-              height: 40,
-              width: 300,
-              child: Center(
-                child: Text("Book Now",
-                    style: Theme.of(context).textTheme.headlineSmall),
-              ),
-            ),
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<
-                  RoundedRectangleBorder>(
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),
-            )),
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Text("Relax in Kochi\n    Close to Cochin International Airport and Kochi city center\n  Choose our Ramada Resort Kochi hotel near Kochi City Center for numerous amenities and comfortable accommodations in a convenient location. Our Cochin location is 45 minutes from Cochin International Airport (COK), and our comfortable, convenient amenities make our hotel the perfect choice for business and leisure travelers alike.",
-              style: Theme.of(context).textTheme.displaySmall),
-        ),
-      ],
-      ),
+      ramada(),
+      lemeridian(),
+      crown(),
         ],
       ),
     );

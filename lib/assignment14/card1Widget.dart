@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'hotelbooking.dart';
 
 class card1Widget extends StatelessWidget {
   final int index;
@@ -25,9 +24,8 @@ class card1Widget extends StatelessWidget {
   card1Widget({ required this.index}) ;
 
   @override
-  Widget build(BuildContext context) => Card(
-    margin: EdgeInsets.all(3),
-    child: Row
+  Widget build(BuildContext context) => Stack(
+    children:[Row
       (children: [
       Container(
         margin: EdgeInsets.all(3),
@@ -42,7 +40,7 @@ class card1Widget extends StatelessWidget {
         ), ),
 
       Container(
-          width: 135,
+
           height: 100,
           child: Column(children: [
             Align(
@@ -66,9 +64,16 @@ class card1Widget extends StatelessWidget {
               ],
             )
           ])),
-      ElevatedButton(onPressed: (){}, child:Text("book now"))
+
 
     ],),
-  );
+
+      Padding(
+        padding: const EdgeInsets.fromLTRB(260, 40, 0, 90),
+        child: Container(
+            width:120,
+            child: ElevatedButton(onPressed: (){}, child:Text("book now"))),
+      )
+  ]);
 }
 

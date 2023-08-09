@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_assignment/assignment14/card1Widget.dart';
+import 'package:flutter_assignment/assignment14/card2Widget.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -26,22 +28,7 @@ class _hotelbookingState extends State<hotelbooking> {
   @override
  int index = 0;
 
-  var names = [
-    "Crown Plaza",
-    "HolidayInn",
-    "Marriot",
-    "Le Meridian",
-    "Taj",
 
-  ];
-  var images = [
-    "assets/assignment14/crownplaza.jpg",
-    "assets/assignment14/holidayinn.jpg",
-    "assets/assignment14/marriot.jpg",
-    "assets/assignment14/meridian.jpg",
-    "assets/assignment14/taj.jpg",
-
-  ];
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,47 +94,9 @@ class _hotelbookingState extends State<hotelbooking> {
             height: 250,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: images.length,
+              itemCount:5,
               itemBuilder: (context, index) {
-                return Card(
-
-                  margin: EdgeInsets.fromLTRB(5, 0, 2, 0),
-
-                 child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                   children: [
-                   Container(
-                     margin: EdgeInsets.all(3),
-                     width: 200,
-                     height: 150,
-                     decoration: BoxDecoration(
-                       borderRadius: const BorderRadius.only(topRight: Radius.circular(10.0),topLeft: Radius.circular(10.0)),
-                       image: DecorationImage(
-                         image: AssetImage(images[index]),
-                         fit: BoxFit.cover,
-                       ),
-                     ), ),
-
-                   Container(
-                width: 200,
-                height: 80,
-                child: Column(children: [
-                  Align(
-                      alignment:Alignment.topLeft,
-                      child: Text(names[index],style:Theme.of(context).textTheme.displayMedium)),
-                  Align(
-                      alignment:Alignment.topLeft,
-                      child: Text("A Five star hotel",style:Theme.of(context).textTheme.bodyMedium)),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-
-                      Text("\$180/night",style:Theme.of(context).textTheme.bodySmall),
-                      Text("4.5",style:Theme.of(context).textTheme.bodySmall)
-                    ],
-                  )
-                ])),
-
-                ],), ); },
+                return card2Widget(index: index); },
             ),
           ),
         ),
@@ -171,55 +120,9 @@ class _hotelbookingState extends State<hotelbooking> {
 
         SliverList(
           delegate: SliverChildBuilderDelegate(
-                (context, index) => Card(
-                  margin: EdgeInsets.all(3),
-                  child: Row
-                    (children: [
-                    Container(
-                      margin: EdgeInsets.all(3),
-                      width: 150,
-                      height: 150,
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.only(topLeft: Radius.circular(10.0),bottomLeft:Radius.circular(10.0) ),
-                        image: DecorationImage(
-                          image: AssetImage(images[index]),
-                          fit: BoxFit.cover,
-                        ),
-                      ), ),
-
-                    Container(
-                        width: 135,
-                        height: 100,
-                        child: Column(children: [
-                          Align(
-                              alignment:Alignment.topLeft,
-                              child: Text(names[index],style:Theme.of(context).textTheme.displayMedium)),
-                          Align(
-                              alignment:Alignment.topLeft,
-                              child: Text("A Five star hotel",style:Theme.of(context).textTheme.bodyMedium)),
-                        Align(
-                            alignment:Alignment.topLeft,
-                          child:
-                          Text("\$180/night",style:Theme.of(context).textTheme.bodySmall),
-                        ),
-                        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.car_rental,color: Colors.blue,),
-                            Icon(Icons.bed_sharp,color: Colors.blue),
-                            Icon(Icons.no_drinks_outlined,color: Colors.blue,),
-                            Icon(Icons.wifi,color: Colors.blue,),
-
-                          ],
-                        )
-                        ])),
-                    ElevatedButton(onPressed: (){}, child:Text("book now"))
-
-                  ],), ),
-
- childCount: images.length,
-          ),
-        ),
-      ]
+                (context, index) => card1Widget(index: index),
+                childCount:5,
+          ))]
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (tapindex) {

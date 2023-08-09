@@ -27,9 +27,7 @@ class card2Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       Card(
-
         margin: EdgeInsets.fromLTRB(5, 0, 2, 0),
-
         child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
@@ -41,9 +39,7 @@ class card2Widget extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage(images[index]),
                   fit: BoxFit.cover,
-                ),
-              ), ),
-
+                ),),),
             Container(
                 width: 200,
                 height: 80,
@@ -57,9 +53,9 @@ class card2Widget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-
                       Text("\$180/night",style:Theme.of(context).textTheme.bodySmall),
-                      Text("4.5",style:Theme.of(context).textTheme.bodySmall)
+                      Wrap(children:[Text("4.5",style:Theme.of(context).textTheme.bodySmall),
+                      Icon(Icons.star,color: Colors.blue,size: 18,)] )
                     ],
                   )
                 ])),

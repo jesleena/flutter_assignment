@@ -65,7 +65,7 @@ class _ramadaState extends State<ramada> {
                     print(rating);
                   },
                 ),
-                Text(" Rs 12000/ ",style: Theme.of(context).textTheme.headlineMedium)
+                Text("\$ 200/  ",style: Theme.of(context).textTheme.headlineMedium)
               ],
             ),
             ElevatedButton(onPressed: (){},

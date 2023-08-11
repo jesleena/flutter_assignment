@@ -25,7 +25,9 @@ class card1Widget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Stack(
-    children:[Row
+    children:[
+
+      Row
       (children: [
       Container(
         margin: EdgeInsets.all(3),

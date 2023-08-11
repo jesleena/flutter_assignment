@@ -7,7 +7,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     theme: ThemeData.light().copyWith(
         textTheme: const TextTheme(
-         displayLarge: TextStyle(fontSize: 25, color:Colors.black,fontWeight: FontWeight.bold),
+          displayLarge: TextStyle(fontSize: 25, color:Colors.black,fontWeight: FontWeight.bold),
           displayMedium: TextStyle(fontSize: 20, color:Colors.black),
           bodyMedium: TextStyle(fontSize: 18,color:Colors.grey),
           bodySmall :TextStyle(fontSize: 18,color:Colors.blue ),
@@ -36,9 +36,8 @@ class _hotelbookingState extends State<hotelbooking> {
         SliverAppBar(
           backgroundColor: Colors.white60,
           floating: true,
-          title:Column(
+           title:Column(
             children: [
-
               Align(
                 alignment:Alignment.topLeft,
                 child: Text(
@@ -89,6 +88,7 @@ class _hotelbookingState extends State<hotelbooking> {
               ' Popular Hotels ',style: Theme.of(context).textTheme.displayLarge,
             ),
           ),),
+
         SliverToBoxAdapter(
           child: Container(
             height: 250,

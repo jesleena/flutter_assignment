@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'hotelbooking.dart';
 
 class card2Widget extends StatelessWidget {
@@ -54,8 +53,9 @@ class card2Widget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("\$180/night",style:Theme.of(context).textTheme.bodySmall),
-                      Wrap(children:[Text("4.5",style:Theme.of(context).textTheme.bodySmall),
-                      Icon(Icons.star,color: Colors.blue,size: 18,)] )
+                      Wrap(children:[
+                        Text("4.5",style:Theme.of(context).textTheme.bodySmall),
+                         Icon(Icons.star,color: Colors.blue,size: 18,)] )
                     ],
                   )
                 ])),

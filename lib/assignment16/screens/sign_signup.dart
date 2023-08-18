@@ -18,7 +18,10 @@ class Sign_Signup extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20),
-
+            CircleAvatar(
+              radius: 100,
+              backgroundImage:NetworkImage("https://thumbs.dreamstime.com/b/salmon-beef-pork-chicken-mix-steak-meat-122176808.jpg"),),
+            SizedBox(height: 20),
             SizedBox(
               height: 50,
               width: 250,
@@ -52,6 +55,7 @@ class Sign_Signup extends StatelessWidget {
           ],
         ),
       ),
+
     );
   }
 }

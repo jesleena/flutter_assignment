@@ -121,7 +121,34 @@ class _HomeeState extends State<Homee> {
                   },childCount: images.length, ),),
 
    ]),
-
+          bottomNavigationBar: BottomNavigationBar(
+            onTap: (tapindex) {
+              setState(() {
+                index = tapindex;
+                if (index == 0) {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Homee()));
+                }
+                else if (index == 1) {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Cart()));
+                }
+                else  {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Homee()));
+                }
+              } );
+            },
+            currentIndex: index,
+            unselectedItemColor: Colors.green,
+            selectedItemColor: Colors.green,
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+            ],
+          ),
 
         );
   }
@@ -129,31 +156,5 @@ class _HomeeState extends State<Homee> {
 
 
 /*
-bottomNavigationBar: BottomNavigationBar(
-            onTap: (tapindex) {
-          setState(() {
-            index = tapindex;
-            if (index == 0) {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Homee()));
-            }
-            else if (index == 1) {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Cart()));
-            }
-            else  {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Cart()));
-            }
-          } );
-        },
-    currentIndex: index,
-    selectedItemColor: Colors.green,
-    type: BottomNavigationBarType.fixed,
-    items: const [
-    BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-    BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ""),
-    BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-    ],
-    ),
+
  */

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
+    //debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
         displayLarge: TextStyle(fontSize:45, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Color(0xFFF48FB1),fontStyle: FontStyle.italic),

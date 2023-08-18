@@ -12,6 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  hive_generator:   # to create typeadapter
+  build_runner:
 
 
 
@@ -27,6 +29,9 @@ dev_dependencies:
   shared_preferences: ^2.2.0
   flutter_rating_bar: ^4.0.1
   provider:
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  fluttertoast: ^8.2.2
 
 
 

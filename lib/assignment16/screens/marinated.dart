@@ -60,7 +60,7 @@ class marinated_page extends StatelessWidget {
                         ElevatedButton(
                             onPressed: () {
                               context.read<ProductProvider>().addToList(currentProduct);
-                             // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Cart()));
+
                             },
                             child:
                             Text("Add",style: Theme.of(context).textTheme.bodySmall) ),

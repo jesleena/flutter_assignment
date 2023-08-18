@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-
-class HomePage extends StatelessWidget {
+const List<String> list = <String>['KOCHI', 'TRISSURE', 'KOZHICODE', 'KOLLAM'];
+class HomePage extends StatefulWidget {
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+
   var images1=[
     "assets/assignment8/ffz1.jpg",
     "assets/assignment8/ffz3.jpg",
     "assets/assignment8/ffz4.jpg",
       ];
+
   var images2=[
     "assets/assignment8/offer2.jpg",
     "assets/assignment8/tomato.jpg",
@@ -19,6 +26,7 @@ class HomePage extends StatelessWidget {
     "assets/assignment8/nutrition.jpg",
     "assets/assignment8/salad.jpg",
        ];
+
   var products=[
     "assets/assignment8/cauli.jpg",
     "assets/assignment8/chilli.jpg",
@@ -33,18 +41,24 @@ class HomePage extends StatelessWidget {
     "assets/assignment8/carrot.jpg",
     "assets/assignment8/ladiesfinger.jpg",
   ];
+
   var blog=[
     "assets/assignment8/bp.jpg",
     "assets/assignment8/broccoli.jpg",
     "assets/assignment8/sneez.jpg",
   ];
+
   var customers=[
     "assets/assignment8/cust1.jpeg",
     "assets/assignment8/cust2.jpg",
     "assets/assignment8/cust3.jpg",
   ];
+
   var text1=["Offers","Vegetables","Fruits","Exotic","Fresh Cuts","Nutrition Chargers","Salads"];
-   Widget build(BuildContext context) {
+
+  String dropdownValue = list.first;
+
+  Widget build(BuildContext context) {
 
 
     return Scaffold(
@@ -54,9 +68,25 @@ class HomePage extends StatelessWidget {
         title: Text("FARMERS FRESH ZONE", style: GoogleFonts.lato(fontSize: 20,
         color: Colors.white),),
           actions: [
-            Text("\nKOCHI", style: GoogleFonts.lato(fontSize: 15,
-              color: Colors.white)),
-              const Icon(Icons.keyboard_arrow_down_outlined),],
+      DropdownButton<String>(
+      value: dropdownValue,
+      dropdownColor: Colors.green,
+      icon: const Icon(Icons.location_on,color: Colors.white,),
+     // style:  TextStyle(color: Colors.white),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: list.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value, style: GoogleFonts.lato(fontSize: 16,
+              color: Colors.white),),
+        );
+      }).toList(),
+    )],
 
 
 

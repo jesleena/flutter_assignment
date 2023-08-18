@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_assignment/assignment16/provider/productprovider.dart';
 import 'package:provider/provider.dart';
+import 'homepage.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
+  @override
+  State<Cart> createState() => _CartState();
+}
+
+class _CartState extends State<Cart> {
   @override
 
   Widget build(BuildContext context) {
     final cartitems = context.watch<ProductProvider>().cart;
 num total=0;
+int index=0;
     for (var item in cartitems) {total = total + (item.price * item.count);}
 
 
@@ -90,6 +97,32 @@ color: Colors.green,
        ]
 
     ),
+      bottomNavigationBar: BottomNavigationBar(
+
+        currentIndex: index,
+        unselectedItemColor: Colors.green,
+        selectedItemColor: Colors.green,
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+        ],
+        onTap: (tapindex) {
+          setState(() {
+            index = tapindex;
+            if (index == 0) {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => Homee()));
+            }
+            else if (index == 1) {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => Cart()));
+            }
+            else  {   }
+          } );
+        },
+      ),
    );
   }
 }

@@ -3,9 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
 class ramada extends StatelessWidget {
-  const ramada({Key? key}) : super(key: key);
-
-  @override
+    @override
   Widget build(BuildContext context) {
     return  Scaffold(
 
@@ -73,6 +71,7 @@ class ramada extends StatelessWidget {
                   ),
                 ),
                 style: ButtonStyle(
+                 backgroundColor: MaterialStateProperty.all(Colors.purple),
                   shape: MaterialStateProperty.all<
                       RoundedRectangleBorder>(
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),

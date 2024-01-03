@@ -8,17 +8,11 @@ void main() {
     debugShowCheckedModeBanner: false,
     theme: ThemeData().copyWith(
         textTheme: TextTheme(
-      displayLarge: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
-      ),
-      displayMedium: TextStyle(
-          fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
-      displaySmall: TextStyle(fontSize: 16, color: Colors.black),
-      headlineMedium: TextStyle(fontSize: 18, color: Colors.purple),
-      headlineSmall: TextStyle(
-          fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+       displayLarge: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),
+       displayMedium: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.bold),
+       displaySmall: TextStyle(fontSize: 16, color: Colors.black),
+       headlineMedium: TextStyle(fontSize: 18, color: Colors.purple),
+       headlineSmall: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
     )),
     home: HomePage(),
   ));

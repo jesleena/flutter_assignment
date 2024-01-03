@@ -76,6 +76,7 @@ class crown extends StatelessWidget {
                 ),
               ),
               style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.purple),
                 shape: MaterialStateProperty.all<
                     RoundedRectangleBorder>(
                   RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0), ),),

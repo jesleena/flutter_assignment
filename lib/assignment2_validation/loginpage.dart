@@ -14,9 +14,10 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("login page",
-          style: GoogleFonts.lato(fontSize: 20,color: Colors.brown,fontStyle: FontStyle.italic,),),
-        backgroundColor: Colors.brown[300],
+        //title: Text("login...",
+         // style: GoogleFonts.lato(fontSize: 20,color: Colors.brown,fontStyle: FontStyle.italic,),),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -33,7 +34,8 @@ class LoginPage extends StatelessWidget {
                 child: TextField(
                   controller: uname,
                   style: GoogleFonts.lato(fontSize: 20,color: Colors.black,fontStyle: FontStyle.italic,),
-                  decoration: const InputDecoration(border: OutlineInputBorder(),
+                  decoration:  InputDecoration(border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(40),),
                       hintText: "username",
                       helperText: "username should be email",
                       labelText: "username",
@@ -47,7 +49,9 @@ class LoginPage extends StatelessWidget {
                   obscureText:true,
                   obscuringCharacter: '*',
                   controller: passwd,
-                  decoration: const InputDecoration(border: OutlineInputBorder(),
+                  decoration:  InputDecoration(border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
                       hintText: "password",
                       helperText: "password must contain 6 characters",
                       labelText: "password",
@@ -55,6 +59,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
+             // MaterialButton(onPressed: (){},color: Colors.brown,),
               ElevatedButton(onPressed:() {
                 if(uname.text!="" && passwd.text!="") {
                   if (uname.text == username && passwd.text == password) {
@@ -68,6 +73,8 @@ class LoginPage extends StatelessWidget {
                 else{
                   ScaffoldMessenger.of(context).showSnackBar( const SnackBar(content:Text("username or password must not be empty"),backgroundColor: Colors.red,));
                 }
+                uname.text="";
+                passwd.text="";
               },
 
                 child:  Text("login",style: GoogleFonts.lato(fontSize: 20,color: Colors.white60,fontStyle: FontStyle.italic,),),
@@ -75,7 +82,15 @@ class LoginPage extends StatelessWidget {
                   backgroundColor: MaterialStatePropertyAll<Color>(Colors.brown),
                 ) ,),
 
-              TextButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Registrationpage()));}, child: Text( "Do you have an account? SignUp", style: GoogleFonts.lato(fontSize: 20,color: Colors.black,fontStyle: FontStyle.italic,), ),)
+              TextButton(onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Registrationpage()));},
+                child: RichText(text:TextSpan(
+                    style: GoogleFonts.lato(fontSize: 20,color: Colors.black,fontStyle: FontStyle.italic,),
+                    children: [
+                  TextSpan(text: "Don't you have an account?",),
+                  TextSpan(text: "SignUp",
+                      style:TextStyle( fontWeight: FontWeight.bold),),
+                ]
+              )  , ),)
 
             ],
           ),

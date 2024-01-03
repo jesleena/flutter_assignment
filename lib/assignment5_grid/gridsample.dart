@@ -22,7 +22,7 @@ class gridSample extends StatelessWidget {
     Colors.teal,
     Colors.brown,
   ];
-  static const gridicon = <IconData>[
+  var gridicon =[
     Icons.home,
     Icons.camera,
     Icons.video_call,

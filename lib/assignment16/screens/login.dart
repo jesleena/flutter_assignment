@@ -3,8 +3,8 @@ import 'homepage.dart';
 
 
 class LoginPage extends StatelessWidget {
-  String username="jesleenaiqbal09@gmail.com";
-  String password="9876543210";
+  String username="jesleena";
+  String password="123456";
   final uname = TextEditingController();
   final passwd = TextEditingController();
   @override
@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-      //  title: Text("login page", style: Theme.of(context).textTheme.displayLarge,)
+       title: Text("login ", style: Theme.of(context).textTheme.displayLarge,)
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
-             // Image.asset('assets/assignment2/icon1.png',  height: 100, width: 100, ),
+              Image.asset('assets/assignment2/icon1.png',  height: 100, width: 100, ),
               Text( "login", style: Theme.of(context).textTheme.displayMedium,) ,
               Text( "Welcome back,login with your credentials",  ),
 
@@ -55,7 +55,7 @@ class LoginPage extends StatelessWidget {
 
               ElevatedButton(onPressed:() {
                 if(uname.text!="" && passwd.text!="") {
-                  if (uname.text == username && passwd.text == password) {
+                  if (uname.text==username && passwd.text==password) {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => Homee()));
                   }
@@ -63,10 +63,12 @@ class LoginPage extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar( const SnackBar(content:Text("username or password incorrect"),backgroundColor: Colors.red,));
                   }
                 }
-                else{
-                  ScaffoldMessenger.of(context).showSnackBar( const SnackBar(content:Text("username or password must not be empty"),backgroundColor: Colors.red,));
-                }
-              },
+               else{
+                 ScaffoldMessenger.of(context).showSnackBar( const SnackBar(content:Text("username or password must not be empty"),backgroundColor: Colors.red,));
+               }
+                uname.text="";
+               passwd.text="";
+             },
 
                 child:  Text("login",
                     style: Theme.of(context).textTheme.bodySmall ),

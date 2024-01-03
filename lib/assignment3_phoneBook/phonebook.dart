@@ -33,17 +33,19 @@ class contactList extends StatelessWidget {
       appBar: AppBar( title: Text("Contacts",style: GoogleFonts.lato(fontSize: 25,fontStyle: FontStyle.italic,))),
       body:  ListView(
           children:List.generate(12,(index) => Card(child:
-          ListTile(
-              leading:  CircleAvatar(
-                  backgroundImage: AssetImage(images[index])),
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(names[index],style: GoogleFonts.lato(fontSize: 25,fontStyle: FontStyle.italic,)),
-                  Text('9876543210',style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
-                ],
-              ),
-              trailing: const Icon(Icons.navigate_next)
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: ListTile(
+                leading:  CircleAvatar(
+                    backgroundImage: AssetImage(images[index])),
+                title:
+                    Text(names[index],style: GoogleFonts.lato(fontSize: 25,fontStyle: FontStyle.italic,)),
+                 subtitle:
+                    Text('9876543210',style: GoogleFonts.lato(fontSize: 15,fontStyle: FontStyle.italic,)),
+
+
+                trailing: const Icon(Icons.navigate_next)
+            ),
           ),)
           )),);
 

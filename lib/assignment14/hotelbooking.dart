@@ -120,7 +120,7 @@ class _hotelbookingState extends State<hotelbooking> {
 
         SliverList(
           delegate: SliverChildBuilderDelegate(
-                (context, index) => card1Widget(index: index),
+                (context, index) => card1Widget(label: Text("crown Plaza"), image1:"assets/assignment14/crownplaza.jpg"),
                 childCount:5,
           ))]
       ),

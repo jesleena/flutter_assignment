@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
-class crown extends StatefulWidget {
+class crown extends StatelessWidget {
   const crown({Key? key}) : super(key: key);
 
-  @override
-  State<crown> createState() => _crownState();
-}
-
-class _crownState extends State<crown> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(

@@ -47,7 +47,7 @@ class Productlist extends StatelessWidget {
               color: Colors.grey[400],
               elevation: 5,
               child: ListTile(
-                  leading: CircleAvatar(   backgroundImage: AssetImage(images[index])),
+                  leading: CircleAvatar(   backgroundImage: AssetImage(images[index],)),
                   title: Column( crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(

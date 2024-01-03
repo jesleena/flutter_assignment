@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 
 class Signup_Form extends StatelessWidget {
   var formkey1 = GlobalKey<FormState>();
-  var conname = TextEditingController();
-  var conemail = TextEditingController();
-  var pass = TextEditingController();
-  var cpass = TextEditingController();
+  var name_ctrl = TextEditingController();
+  var mail_ctrl = TextEditingController();
+  var pwd_ctrl = TextEditingController();
+  var cpwd_ctrl = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class Signup_Form extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: TextFormField(
-                  controller: conname,
+                  controller: name_ctrl,
                   validator: (name) {
                     if (name!.isEmpty) {
                       return "Name is required";
@@ -67,7 +67,7 @@ class Signup_Form extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: TextFormField(
-                  controller: conemail,
+                  controller: mail_ctrl,
                   validator: (email) {
                     if (email!.isEmpty ||
                         !email.contains("@") ||
@@ -95,7 +95,7 @@ class Signup_Form extends StatelessWidget {
                     }
                   },
                   textInputAction: TextInputAction.next,
-                  controller: pass,
+                  controller: pwd_ctrl,
                   obscureText: true,
                   obscuringCharacter: '*',
                   decoration: const InputDecoration(
@@ -109,11 +109,11 @@ class Signup_Form extends StatelessWidget {
                 padding: const EdgeInsets.all(25.0),
 
                 child: TextFormField(
-                  controller: cpass,
+                  controller: cpwd_ctrl,
                   validator: (pass1) {
                     if (pass1!.isEmpty || pass1.length < 6) {
                       return "Password must should be greater than 6";
-                    } else if (pass.text != cpass.text) {
+                    } else if (pwd_ctrl.text != cpwd_ctrl.text) {
                       return "Password not matched";
                     } else {
                       return null;
@@ -138,24 +138,24 @@ class Signup_Form extends StatelessWidget {
                           ))),
 
                   onPressed: () async {
-                    final valid1 = formkey1.currentState!.validate();
-                    if (valid1) {
-                      /// if form state is valid data from the textfield will upload to db
-                      var data = await SQLHelper.userFoundDB(conname.text, conemail.text);
-
-                      if (data.isNotEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('User already exist')));
-                      }
-                      else {
-                        Addnewuser(conname.text, conemail.text, pass.text);
-                      }}
-                    else {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          action: SnackBarAction(label: 'UNDO', onPressed: () {}),
-                          content: const Text('Invalid username / password')));
-                    }
-                  },
+                     final valid1 = formkey1.currentState!.validate();
+                     if (valid1) {
+                    //   /// if form state is valid data from the textfield will upload to db
+                    //   var data = await SQLHelper.userFoundDB(conname.text, conemail.text);
+                    //
+                    //   if (data.isNotEmpty) {
+                    //     ScaffoldMessenger.of(context).showSnackBar(
+                    //         const SnackBar(content: Text('User already exist')));
+                    //   }
+                    //   else {
+                        Addnewuser(name_ctrl.text, mail_ctrl.text, pwd_ctrl.text);
+                    //   }}
+                    // else {
+                    //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    //       action: SnackBarAction(label: 'UNDO', onPressed: () {}),
+                    //       content: const Text('Invalid username / password')));
+                    // }
+                  }},
                   child: const Text(
                     "Sign Up",
                     style: TextStyle(color: Colors.black),

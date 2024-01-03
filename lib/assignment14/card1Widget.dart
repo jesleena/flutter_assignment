@@ -2,31 +2,16 @@ import 'package:flutter/material.dart';
 
 
 class card1Widget extends StatelessWidget {
-  final int index;
 
-  var names = [
-    "Crown Plaza",
-    "HolidayInn",
-    "Marriot",
-    "Le Meridian",
-    "Taj",
+final Widget? label;
+final String? image1;
 
-  ];
-  var images = [
-    "assets/assignment14/crownplaza.jpg",
-    "assets/assignment14/holidayinn.jpg",
-    "assets/assignment14/marriot.jpg",
-    "assets/assignment14/meridian.jpg",
-    "assets/assignment14/taj.jpg",
 
-  ];
-
-  card1Widget({ required this.index}) ;
+  card1Widget({ required this.label,required this.image1}) ;
 
   @override
   Widget build(BuildContext context) => Stack(
     children:[
-
       Row
       (children: [
       Container(
@@ -36,18 +21,19 @@ class card1Widget extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.only(topLeft: Radius.circular(10.0),bottomLeft:Radius.circular(10.0) ),
           image: DecorationImage(
-            image: AssetImage(images[index]),
+            image: AssetImage(image1!),
             fit: BoxFit.cover,
           ),
         ), ),
 
       Container(
-
           height: 100,
           child: Column(children: [
             Align(
                 alignment:Alignment.topLeft,
-                child: Text(names[index],style:Theme.of(context).textTheme.displayMedium)),
+                child:label
+                //Text(names[index],style:Theme.of(context).textTheme.displayMedium)
+            ),
             Align(
                 alignment:Alignment.topLeft,
                 child: Text("A Five star hotel",style:Theme.of(context).textTheme.bodyMedium)),
@@ -62,12 +48,9 @@ class card1Widget extends StatelessWidget {
                 Icon(Icons.bed_sharp,color: Colors.blue),
                 Icon(Icons.no_drinks_outlined,color: Colors.blue,),
                 Icon(Icons.wifi,color: Colors.blue,),
-
               ],
             )
           ])),
-
-
     ],),
 
       Padding(

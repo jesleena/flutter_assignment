@@ -4,7 +4,7 @@ import 'dataTourism.dart';
 
 void main() {
   runApp(MaterialApp(
-    theme:  ThemeData(primarySwatch: Colors.deepPurple).copyWith(
+    theme:  ThemeData().copyWith(
         textTheme: TextTheme(
           displayLarge: TextStyle(fontSize:40, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.white,fontStyle: FontStyle.italic),
           displayMedium: TextStyle(fontSize:35, fontFamily:'Amaranth',fontWeight: FontWeight.bold,color:Colors.deepPurple),

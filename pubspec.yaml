@@ -26,6 +26,7 @@ dev_dependencies:
     sdk: flutter
   google_fonts: ^5.1.0
   carousel_slider: ^4.2.1
+  intl: ^0.17.0
   shared_preferences: ^2.2.0
   flutter_rating_bar: ^4.0.1
   provider:

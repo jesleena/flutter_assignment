@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:intl/intl.dart';
 
 void main() async{
   await Hive.initFlutter();
@@ -30,6 +31,7 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
   final tname    = TextEditingController();
   final tcontent = TextEditingController();
 
+
   //creating hive box
   final box = Hive.box('todo_box');
 
@@ -51,7 +53,7 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
             itemBuilder: (context, index) {
               return Card(
 
-                color: Colors.pink[100+(index)*100],
+                color: Colors.primaries[index % Colors.primaries.length],
                 child: ListTile(
                   leading:  Icon(Icons.task,color: Colors.green,),
                   title: Text(task[index]['taskname'],style: Theme.of(context).textTheme.bodyMedium),
@@ -61,12 +63,13 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
                       IconButton(
                           onPressed: () {
                             create_or_edit_Task(task[index]['id']);
-                          }, icon: const Icon(Icons.edit,color: Colors.blue,)),
+                          }, icon: const Icon(Icons.edit,color: Colors.black,)),
                       IconButton(
                           onPressed: () {
                             deleteTask(task[index]['id']);
-                          }, icon: const Icon(Icons.delete,color: Colors.red))
-                    ],
+                          }, icon: const Icon(Icons.delete,color: Colors.black)),
+                Text(task[index]['task_time']),
+                    ]
                   ),
 
                 ),
@@ -82,7 +85,8 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
         ));
   }
 
-  void create_or_edit_Task(int? itemkey) {
+  void create_or_edit_Task(int? itemkey)//bottom sheet
+  {
     // item key similar to id in sqflite
     if (itemkey != null) {
       final existing_task = task.firstWhere((element) => element['id']== itemkey);
@@ -117,20 +121,28 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
                 ),
                 ElevatedButton(
                     onPressed: (){
+
                       if(itemkey == null){
+                        DateTime someDateTime = DateTime.now();
+                        DateFormat formatter = DateFormat.jm();
+                        String formatted = formatter.format(someDateTime);
                         createTask(
                             {
                               "task_name":tname.text.trim(),
-                              "task_cont":tcontent.text.trim()
+                              "task_cont":tcontent.text.trim(),
+                              "task_time":formatted.trim(),
                             }
                         );
                       }
                       if(itemkey != null){
                         ///edit the values that particular key in hive
-
+                        DateTime someDateTime = DateTime.now();
+                        DateFormat formatter = DateFormat.jm();
+                        String formatted = formatter.format(someDateTime);
                         editTask(itemkey,{
                           'task_name':tname.text.trim(),
-                          'task_cont':tcontent.text.trim()
+                          'task_cont':tcontent.text.trim(),
+                          'task_time':formatted.trim(),
                         });
                       }
                       tname.text="";
@@ -159,7 +171,8 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
       return {
         'id' : key,   // key 1 key 2 etc
         'taskname'   :map_of_that_single_key['task_name'],
-        'taskcontent':map_of_that_single_key['task_cont']
+        'taskcontent':map_of_that_single_key['task_cont'],
+        'task_time':map_of_that_single_key['task_time'],
       };
     }).toList();
 
@@ -170,6 +183,15 @@ class _CRUD_HIVEState extends State<CRUD_HIVE> {
 
   Future<void> editTask(int itemkey, Map<String, dynamic> editedtask) async{
     await box.put(itemkey, editedtask);
+    Fluttertoast.showToast(
+        msg: "Successfully Edited",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        //timeInSecForIosWeb: 1,
+        backgroundColor: Colors.pink[300],
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
     refresh_or_read_task();
   }
 

@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
-class lemeridian extends StatefulWidget {
+class lemeridian extends StatelessWidget {
   const lemeridian({Key? key}) : super(key: key);
 
-  @override
-  State<lemeridian> createState() => _lemeridianState();
-}
-
-class _lemeridianState extends State<lemeridian> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(

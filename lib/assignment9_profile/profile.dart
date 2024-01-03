@@ -62,34 +62,28 @@ class MyProfile extends StatelessWidget {
             Text("Mobile App Developer",style: GoogleFonts.lato(fontSize: 25)),
             Expanded(
                 child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: names.length ,
-                            itemBuilder: (context, index) {
-                              return Card(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                ),
-                                color: Colors.grey[350],
-                                child:
-                              InkWell(
-                                child: ListTile(
-                                  leading: Icon(gridicon[index]),
-                                  title: Text(names[index], style: GoogleFonts.lato(
-                                      fontSize: 23,fontWeight: FontWeight.bold)),
-                                  trailing: Icon(Icons.navigate_next),
-                                ),
-                              ),);
-                            }
-                        ),
-                      ),
-                    ],
+                  child: Container(
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: names.length ,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                            ),
+                            color: Colors.grey[350],
+                            child:
+                          InkWell(
+                            child: ListTile(
+                              leading: Icon(gridicon[index]),
+                              title: Text(names[index], style: GoogleFonts.lato(
+                                  fontSize: 23,fontWeight: FontWeight.bold)),
+                              trailing: Icon(Icons.navigate_next),
+                            ),
+                          ),);
+                        }
+                    ),
                   ),
                 )
               ),

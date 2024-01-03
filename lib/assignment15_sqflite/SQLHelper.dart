@@ -27,7 +27,7 @@ class SQLHelper {
     return id;
   }
   /// user found in db for login
-  static Future<List<Map>> CheckLoginDB(String email, String password) async {
+  static Future<List<Map>?> CheckLoginDB(String email, String password) async {
     final db = await SQLHelper.OpenDb();
     final data = await db.rawQuery(
         "SELECT * FROM user WHERE email= '$email' AND password = '$password' ");
@@ -35,18 +35,18 @@ class SQLHelper {
     if (data.isNotEmpty) {
       return data;
     }
-    return data;
+    return null;
   }
 
   ///check user already exist for registration
-  static Future<List<Map>> userFoundDB(String uname, String eemail) async {
+  static Future<List<Map>?> userFoundDB(String uname, String eemail) async {
     final db = await SQLHelper.OpenDb();
     final data = await db.rawQuery(
         "SELECT * FROM user WHERE name= '$uname' AND email = '$eemail' ");
     if (data.isNotEmpty) {
       return data;
     }
-    return data;
+    else return null;
   }
 
   /// fetch all the users in db

@@ -16,16 +16,16 @@ class _Login_FormState extends State<Login_Form> {
   final TextEditingController conpass = TextEditingController();
 
   void logincheck(String email, String password) async {
-    ///Admin login
-    if (email == 'admin@gmail.com' && password == '123456') {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => AdminHome()));
-    } else {
+    // ///Admin login
+    // if (email == 'admin@gmail.com' && password == '123456') {
+    //   Navigator.pushReplacement(
+    //       context, MaterialPageRoute(builder: (context) => AdminHome()));
+    // } else {
       ///check if user already exit
       var data = await SQLHelper.CheckLoginDB(email, password);
 
       /// if user found in db
-      if (data.isNotEmpty) {
+      if (data!.isNotEmpty) {
         Navigator.pushReplacement(context, MaterialPageRoute(
             builder: (context) => Home(
               data: data,
@@ -38,7 +38,7 @@ class _Login_FormState extends State<Login_Form> {
             context, MaterialPageRoute(builder: (context) => Login_Signup()));
         print('Login faild');
       }
-    }
+   // }
   }
 
   @override

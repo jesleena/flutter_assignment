@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 
-class ramada extends StatefulWidget {
+class ramada extends StatelessWidget {
   const ramada({Key? key}) : super(key: key);
 
-  @override
-  State<ramada> createState() => _ramadaState();
-}
-
-class _ramadaState extends State<ramada> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
